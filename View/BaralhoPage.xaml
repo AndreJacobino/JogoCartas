@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JogoCartas.View.BaralhoPage"
+             xmlns:viewmodel="clr-namespace:JogoCartas.ViewModels"
+             x:DataType="viewmodel:BaralhoViewModel"
+             BackgroundColor="#2E7D32"
+             Shell.NavBarIsVisible="False"
+             Title="BaralhoPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Minhas Cartas"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            />
+
+        <Image Source="{Binding CardImageUrl}"/>
+
+        <Label Text="{Binding StatusTexto}" FontSize="16"/>
+
+        <Label Text="{Binding CartasRestantes}" FontSize="14" TextColor="Red" FontAttributes="Bold"/>
+
+        <Button Command="{Binding PegarCartaCommand}" Text="comprar carta"/>
+
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" Color="White" HorizontalOptions="Center"/>
+    </VerticalStackLayout>
+</ContentPage>
